@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border: solid 1px;
+  box-shadow: 0 0 0.7rem 0 grey;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+}
+
+.header-title {
+  font-size: 18px;
+  padding: 5px;
+  font-family: var(--primaryFont);
+}
+
+.header-subtitle {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  padding: 5px;
+  font-family: var(--primaryFont);
+}
+
+.header-logo {
+  width: 38px;
+  height: 38px;
+  justify-content: center;
+}
