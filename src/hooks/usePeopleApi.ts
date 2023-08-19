@@ -22,6 +22,6 @@ const usePeopleApi = () => {
     return users;
   }, [apiUrl]);
 
-  return getUser;
+  return { getUser };
 };
 export default usePeopleApi;
