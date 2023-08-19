@@ -1,0 +1,7 @@
+.users-title {
+  text-align: center;
+  color: var(--primaryColor);
+  font-family: var(--secondaryFont);
+  font-size: 1.2rem;
+  font-weight: 700;
+}

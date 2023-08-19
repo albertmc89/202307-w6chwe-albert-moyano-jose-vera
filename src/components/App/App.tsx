@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "../Header/Header";
+import UsersList from "../UsersList/UsersList";
 import "./App.css";
 
 const App = (): React.ReactElement => {
@@ -10,6 +11,7 @@ const App = (): React.ReactElement => {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
         </Routes>
+        <UsersList />
       </main>
     </div>
   );
