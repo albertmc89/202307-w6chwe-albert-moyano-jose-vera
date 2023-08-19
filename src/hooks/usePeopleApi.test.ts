@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import { usersMock } from "../mocks/mocksData";
+import { usersMockApi } from "../mocks/mocksData";
 import usePeopleApi from "./usePeopleApi";
 
 describe("Given function getUsers from usePeopleApi custom hook", () => {
@@ -10,7 +10,7 @@ describe("Given function getUsers from usePeopleApi custom hook", () => {
 
       const users = await getUser();
 
-      expect(users).toStrictEqual(usersMock);
+      expect(users).toStrictEqual(usersMockApi);
     });
   });
 });

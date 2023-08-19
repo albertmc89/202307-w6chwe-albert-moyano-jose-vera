@@ -1,5 +1,5 @@
-import { ApiUser } from "../types";
+import { User } from "../types";
 
 export interface UserState {
-  users: ApiUser[];
+  users: User[];
 }

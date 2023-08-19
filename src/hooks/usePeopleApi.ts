@@ -6,7 +6,7 @@ const usePeopleApi = () => {
   const apiUrl = import.meta.env.VITE_API_PEOPLE_URL;
 
   const getUser = useCallback(async (): Promise<User[]> => {
-    const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}users`);
+    const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}people`);
 
     const users = apiUsers.map<User>(
       ({ id, name, age, sexo, image, location, isFriend }) => ({
@@ -19,6 +19,7 @@ const usePeopleApi = () => {
         isFriend,
       }),
     );
+
     return users;
   }, [apiUrl]);
 
