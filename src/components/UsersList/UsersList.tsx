@@ -7,7 +7,7 @@ const UsersList = (): React.ReactElement => {
   return (
     <>
       <div className="users-title">
-        <h2>Users list:</h2>
+        <h2>Users list</h2>
       </div>
       <ul className="users-list">
         <div className="users-list__content">
