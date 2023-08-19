@@ -1,10 +1,15 @@
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "../Header/Header";
 
 const App = (): React.ReactElement => {
   return (
-    <div>
+    <div className="container">
       <Header />
-      <p>title</p>
+      <main>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+        </Routes>
+      </main>
     </div>
   );
 };

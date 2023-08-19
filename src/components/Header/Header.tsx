@@ -1,4 +1,5 @@
 import serialFriendsLogo from "../../assets/serialFriendsLogo.svg";
+import Navigation from "../Navigation/Navigation";
 import "./Header.css";
 
 const Header = (): React.ReactElement => {
@@ -13,6 +14,7 @@ const Header = (): React.ReactElement => {
         <h1 className="header-title">Serial Friends</h1>
       </div>
       <h2 className="header-subtitle">Filter your friends</h2>
+      <Navigation />
     </header>
   );
 };

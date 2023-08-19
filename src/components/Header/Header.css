@@ -4,28 +4,41 @@
   padding: 10px;
   width: 100%;
   height: 100%;
-  border: solid 1px;
+  border-bottom: solid 0 var(--white);
   box-shadow: 0 0 0.7rem 0 grey;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 63, 255, 0.7553615196078431) 0%,
+    rgba(24, 32, 85, 1) 100%
+  );
 }
 
 .title-container {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 .header-title {
+  text-transform: uppercase;
   font-size: 18px;
   padding: 5px;
   font-family: var(--primaryFont);
+  color: var(--white);
 }
 
 .header-subtitle {
   display: flex;
   flex-direction: column;
+  text-align: center;
   font-size: 14px;
-  padding: 5px;
-  font-family: var(--primaryFont);
+  margin: 10px 0;
+  font-family: var(--secondaryFont);
+  font-weight: 300;
+  color: var(--white);
 }
 
 .header-logo {
