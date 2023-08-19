@@ -5,23 +5,28 @@ import { ApiUser, User } from "../types";
 const usePeopleApi = () => {
   const apiUrl = import.meta.env.VITE_API_PEOPLE_URL;
 
-  const getUser = useCallback(async (): Promise<User[]> => {
-    const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}users`);
+  const getUsers = useCallback(async (): Promise<User[]> => {
+    try {
+      const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}people`);
 
-    const users = apiUsers.map<User>(
-      ({ id, name, age, sexo, image, location, isFriend }) => ({
-        id,
-        name,
-        age,
-        sexo,
-        picture: image,
-        location,
-        isFriend,
-      }),
-    );
-    return users;
+      const users = apiUsers.map<User>(
+        ({ id, name, age, sexo, image, location, isFriend }) => ({
+          id,
+          name,
+          age,
+          sexo,
+          picture: image,
+          location,
+          isFriend,
+        }),
+      );
+
+      return users;
+    } catch (error) {
+      throw new Error("Can't get any user");
+    }
   }, [apiUrl]);
 
-  return getUser;
+  return { getUsers };
 };
 export default usePeopleApi;
