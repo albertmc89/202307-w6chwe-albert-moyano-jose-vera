@@ -1,5 +1,6 @@
 import React from "react";
 import { User } from "../../types";
+import Button from "../Button/Button";
 import "./UserCard.css";
 
 interface UserCardProps {
@@ -29,13 +30,12 @@ const UserCard = ({
             <span className="user__data-label">Location: </span> {location}
           </li>
           <li className="user__data">
-            <span className="user__data-label">Sexo: </span> {sex}
+            <span className="user__data-label">Sex: </span> {sex}
           </li>
         </ul>
         <div className="button-container">
-          <button className="button">
-            {isFriend === true ? "Friend" : "Enemy"}
-          </button>
+          <Button className={`user${isFriend ? " friend" : "enemy"}`} />
+          {isFriend ? "friend" : "enemy"}
         </div>
       </div>
     </article>
