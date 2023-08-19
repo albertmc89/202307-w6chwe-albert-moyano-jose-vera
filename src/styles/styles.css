@@ -16,6 +16,7 @@
 body {
   margin: 0;
   font-family: var(--primaryFont);
+  background-color: rgb(197, 197, 197);
 }
 
 ul,
