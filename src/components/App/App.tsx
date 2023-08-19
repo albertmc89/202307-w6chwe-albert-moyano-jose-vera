@@ -4,6 +4,7 @@ import usePeopleApi from "../../hooks/usePeopleApi";
 import { useAppDispatch } from "../../store";
 import { loadUsersActionCreator } from "../../store/Users/UsersSlice";
 import Header from "../Header/Header";
+import Loading from "../Loading/Loading";
 import UsersList from "../UsersList/UsersList";
 import "./App.css";
 
@@ -28,6 +29,7 @@ const App = (): React.ReactElement => {
         </Routes>
         <UsersList />
       </main>
+      {<Loading />}
     </div>
   );
 };
