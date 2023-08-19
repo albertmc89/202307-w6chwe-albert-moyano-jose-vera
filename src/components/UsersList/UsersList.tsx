@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../store";
+import UserCard from "../UserCard/UserCard";
 import "./UsersList.css";
 
 const UsersList = (): React.ReactElement => {
@@ -12,7 +13,9 @@ const UsersList = (): React.ReactElement => {
       <ul className="users-list">
         <div className="users-list__content">
           {users.map((user) => (
-            <li key={user.id}></li>
+            <li key={user.id}>
+              <UserCard user={user} />
+            </li>
           ))}
         </div>
       </ul>
