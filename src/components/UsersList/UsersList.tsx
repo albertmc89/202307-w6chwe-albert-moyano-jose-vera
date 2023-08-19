@@ -11,13 +11,11 @@ const UsersList = (): React.ReactElement => {
         <h2>Users list</h2>
       </div>
       <ul className="users-list">
-        <div className="users-list__content">
-          {users.map((user) => (
-            <li key={user.id}>
-              <UserCard user={user} />
-            </li>
-          ))}
-        </div>
+        {users.map((user) => (
+          <li key={user.id}>
+            <UserCard user={user} />
+          </li>
+        ))}
       </ul>
     </>
   );

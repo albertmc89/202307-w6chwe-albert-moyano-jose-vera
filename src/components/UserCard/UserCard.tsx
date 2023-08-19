@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleUserActionCreator } from "../../store/Users/UsersSlice";
 import { User } from "../../types";
 import "./UserCard.css";
 
@@ -7,8 +9,13 @@ interface UserCardProps {
 }
 
 const UserCard = ({
-  user: { name, age, location, picture, sex, isFriend },
+  user: { id, name, age, location, picture, sex },
 }: UserCardProps): React.ReactElement => {
+  const dispatch = useDispatch();
+
+  const toggleUser = () => {
+    dispatch(toggleUserActionCreator(id));
+  };
   return (
     <article className="user">
       <div className="user__container">
@@ -29,13 +36,11 @@ const UserCard = ({
             <span className="user__data-label">Location: </span> {location}
           </li>
           <li className="user__data">
-            <span className="user__data-label">Sexo: </span> {sex}
+            <span className="user__data-label">Sex: </span> {sex}
           </li>
         </ul>
         <div className="button-container">
-          <button className="button">
-            {isFriend === true ? "Friend" : "Enemy"}
-          </button>
+          <button className="button" onClick={toggleUser}></button>
         </div>
       </div>
     </article>
