@@ -7,12 +7,16 @@ interface UserCardProps {
 }
 
 const UserCard = ({
-  user: { name, age, location, picture, sexo, isFriend },
+  user: { name, age, location, picture, sex, isFriend },
 }: UserCardProps): React.ReactElement => {
   return (
     <article className="user">
       <div className="user__container">
-        <img className="user__picture" src={`${picture}`} alt={name} />
+        <img
+          className="user__picture"
+          src={`${picture}`}
+          alt={`Close-up of ${name}`}
+        />
       </div>
       <div className="user__data-container">
         <h2 className="user__name">{name}</h2>
@@ -25,7 +29,7 @@ const UserCard = ({
             <span className="user__data-label">Location: </span> {location}
           </li>
           <li className="user__data">
-            <span className="user__data-label">Sexo: </span> {sexo}
+            <span className="user__data-label">Sexo: </span> {sex}
           </li>
         </ul>
         <div className="button-container">

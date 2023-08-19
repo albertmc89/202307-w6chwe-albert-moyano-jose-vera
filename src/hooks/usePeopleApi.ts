@@ -9,11 +9,11 @@ const usePeopleApi = () => {
     const { data: apiUsers } = await axios.get<ApiUser[]>(`${apiUrl}people`);
 
     const users = apiUsers.map<User>(
-      ({ id, name, age, sexo, image, location, isFriend }) => ({
+      ({ id, name, age, sex, image, location, isFriend }) => ({
         id,
         name,
         age,
-        sexo,
+        sex,
         picture: image,
         location,
         isFriend,

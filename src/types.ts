@@ -2,7 +2,7 @@ export interface ApiUser {
   id: number;
   name: string;
   age: number;
-  sexo: string;
+  sex: string;
   image: string;
   location: string;
   isFriend: boolean;
