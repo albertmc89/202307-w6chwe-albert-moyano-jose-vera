@@ -7,3 +7,7 @@ export interface ApiUser {
   location: string;
   isFriend: boolean;
 }
+
+export interface User extends Omit<ApiUser, "image"> {
+  picture: string;
+}
