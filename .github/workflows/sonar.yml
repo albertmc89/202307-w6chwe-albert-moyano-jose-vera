@@ -18,7 +18,7 @@ jobs:
       - name: Coverage
         run: npm run test:coverage
         env:
-          VITE_API_FILMS_URL: ${{ secrets.VITE_API_PEOPLE_URL }} # Needed to get PR information, if any
+          VITE_API_PEOPLE_URL: ${{ secrets.VITE_API_PEOPLE_URL }} # Needed to get PR information, if any
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
