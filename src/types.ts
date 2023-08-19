@@ -1,4 +1,4 @@
-export interface User {
+export interface ApiUser {
   id: number;
   name: string;
   age: number;
@@ -6,4 +6,8 @@ export interface User {
   image: string;
   location: string;
   isFriend: boolean;
+}
+
+export interface User extends Omit<ApiUser, "image"> {
+  picture: string;
 }
