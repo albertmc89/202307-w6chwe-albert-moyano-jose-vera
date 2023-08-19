@@ -14,7 +14,7 @@ const UserCard = ({
 }: UserCardProps): React.ReactElement => {
   const dispatch = useDispatch();
 
-  const toggleUser = () => {
+  const toggleUser = (id: number) => {
     dispatch(toggleUserActionCreator(id));
   };
   return (
@@ -41,9 +41,11 @@ const UserCard = ({
           </li>
         </ul>
         <div className="button-container">
-          <button className="button" onClick={toggleUser}></button>
-          <Button className={`user${isFriend ? " friend" : "enemy"}`} />
-          {isFriend ? "friend" : "enemy"}
+          <Button
+            className={isFriend ? "friend" : "enemy"}
+            actionOnClick={() => toggleUser(id)}
+            text={isFriend ? "friend" : "enemy"}
+          />
         </div>
       </div>
     </article>

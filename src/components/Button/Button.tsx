@@ -1,13 +1,22 @@
 interface ButtonProps {
   className: string;
+  actionOnClick: () => void;
+  text: string;
 }
 
-const Button = ({ className }: ButtonProps): React.ReactElement => {
+const Button = ({
+  className,
+  actionOnClick,
+  text,
+}: ButtonProps): React.ReactElement => {
   return (
     <button
       type="button"
-      className={`button${className ? `${className}` : ""}`}
-    ></button>
+      className={`${className} ? ${className} : ${className}`}
+      onClick={actionOnClick}
+    >
+      {text}
+    </button>
   );
 };
 
