@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Counter from "../Counter/Counter";
+import NewUserPage from "../../pages/NewUserPage/NewUserPage";
+import UsersListPage from "../../pages/UsersListPage/UsersListPage";
 import Header from "../Header/Header";
-import NewUserForm from "../NewUserForm/NewUserForm";
 import "./App.css";
 
 const App = (): React.ReactElement => {
@@ -9,15 +9,10 @@ const App = (): React.ReactElement => {
     <div className="container">
       <Header />
       <main className="main-content">
-        <Counter />
-        <NewUserForm />
         <Routes>
-          <Route path="/home" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<UsersListPage />} />
           <Route path="/" element={<Navigate to="/home" />} />
-          <Route
-            path="/newrelationshippage"
-            element={<Navigate to="/newrelationshippage" />}
-          />
+          <Route path="/newrelationshippage" element={<NewUserPage />} />
         </Routes>
       </main>
     </div>
