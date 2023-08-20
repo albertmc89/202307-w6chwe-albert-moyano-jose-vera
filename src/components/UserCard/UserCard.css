@@ -1,5 +1,5 @@
 .user {
-  width: 320px;
+  width: 280px;
   border: 3px solid var(--white);
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -47,7 +47,19 @@
   padding: 10px;
 }
 
-.button {
+.button-container {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.friend {
   color: rgb(131, 248, 15);
   font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.enemy {
+  color: rgb(195, 62, 62);
+  font-size: 1.2rem;
+  text-transform: capitalize;
 }

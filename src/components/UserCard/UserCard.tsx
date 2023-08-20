@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { toggleUserActionCreator } from "../../store/Users/UsersSlice";
 import { User } from "../../types";
+import Button from "../Button/Button";
 import "./UserCard.css";
 
 interface UserCardProps {
@@ -9,11 +10,11 @@ interface UserCardProps {
 }
 
 const UserCard = ({
-  user: { id, name, age, location, picture, sex },
+  user: { id, name, age, location, picture, sex, isFriend },
 }: UserCardProps): React.ReactElement => {
   const dispatch = useDispatch();
 
-  const toggleUser = () => {
+  const toggleUser = (id: number) => {
     dispatch(toggleUserActionCreator(id));
   };
   return (
@@ -40,7 +41,11 @@ const UserCard = ({
           </li>
         </ul>
         <div className="button-container">
-          <button className="button" onClick={toggleUser}></button>
+          <Button
+            className={isFriend ? "friend" : "enemy"}
+            actionOnClick={() => toggleUser(id)}
+            text={isFriend ? "friend" : "enemy"}
+          />
         </div>
       </div>
     </article>

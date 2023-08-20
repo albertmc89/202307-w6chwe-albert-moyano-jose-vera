@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import usePeopleApi from "../../hooks/usePeopleApi";
+import NewUserPage from "../../pages/NewUserPage/NewUserPage";
+import UsersListPage from "../../pages/UsersListPage/UsersListPage";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { loadUsersActionCreator } from "../../store/Users/UsersSlice";
 import Header from "../Header/Header";
 import Loading from "../Loading/Loading";
-import UsersList from "../UsersList/UsersList";
 import "./App.css";
 
 const App = (): React.ReactElement => {
@@ -26,9 +27,10 @@ const App = (): React.ReactElement => {
       <Header />
       <main className="main-content">
         <Routes>
+          <Route path="/home" element={<UsersListPage />} />
           <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/newrelationshippage" element={<NewUserPage />} />
         </Routes>
-        <UsersList />
       </main>
       {isLoading && <Loading />}
     </div>
