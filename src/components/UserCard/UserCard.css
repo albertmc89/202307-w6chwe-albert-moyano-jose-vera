@@ -47,7 +47,19 @@
   padding: 10px;
 }
 
-.button {
+.button-container {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.friend {
   color: rgb(131, 248, 15);
   font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.enemy {
+  color: rgb(195, 62, 62);
+  font-size: 1.2rem;
+  text-transform: capitalize;
 }
