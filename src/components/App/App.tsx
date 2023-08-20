@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import usePeopleApi from "../../hooks/usePeopleApi";
-import { useAppDispatch } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import { loadUsersActionCreator } from "../../store/Users/UsersSlice";
 import Header from "../Header/Header";
 import Loading from "../Loading/Loading";
@@ -11,6 +11,7 @@ import "./App.css";
 const App = (): React.ReactElement => {
   const dispatch = useAppDispatch();
   const { getUsers } = usePeopleApi();
+  const isLoading = useAppSelector((state) => state.uiState.isLoading);
 
   useEffect(() => {
     (async () => {
@@ -29,7 +30,7 @@ const App = (): React.ReactElement => {
         </Routes>
         <UsersList />
       </main>
-      {<Loading />}
+      {isLoading && <Loading />}
     </div>
   );
 };
