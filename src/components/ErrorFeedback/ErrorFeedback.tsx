@@ -1,4 +1,5 @@
 import error from "../../assets/error.svg";
+import "./ErrorFeedback.css";
 
 const ErrorFeedback = (): React.ReactElement => {
   return (
