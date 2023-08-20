@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import usePeopleApi from "../../hooks/usePeopleApi";
 import { useAppDispatch } from "../../store";
 import { loadUsersActionCreator } from "../../store/Users/UsersSlice";
+import Counter from "../Counter/Counter";
 import Header from "../Header/Header";
 import UsersList from "../UsersList/UsersList";
 import "./App.css";
@@ -23,6 +24,7 @@ const App = (): React.ReactElement => {
     <div className="container">
       <Header />
       <main className="main-content">
+        <Counter />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
         </Routes>
