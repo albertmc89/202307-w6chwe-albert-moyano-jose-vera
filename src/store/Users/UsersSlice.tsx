@@ -28,6 +28,9 @@ const usersSlice = createSlice({
           : { ...user },
       ),
     }),
+    addUser: (currentUsersState, action: PayloadAction<User>): UserState => ({
+      users: [...currentUsersState.users, action.payload],
+    }),
   },
 });
 
@@ -35,4 +38,5 @@ export const usersReducer = usersSlice.reducer;
 export const {
   loadUsers: loadUsersActionCreator,
   toggleUser: toggleUserActionCreator,
+  addUser: addUserActionCreator,
 } = usersSlice.actions;
