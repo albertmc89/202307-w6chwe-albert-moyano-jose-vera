@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NewUserPage from "../../pages/NewUserPage/NewUserPage";
 import UsersListPage from "../../pages/UsersListPage/UsersListPage";
 import { useAppSelector } from "../../store";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Loading from "../Loading/Loading";
 import "./App.css";
@@ -20,6 +21,7 @@ const App = (): React.ReactElement => {
         </Routes>
       </main>
       {isLoading && <Loading />}
+      <Footer />
     </div>
   );
 };
