@@ -88,7 +88,7 @@ export const usersMock: ApiUser[] = [
     age: 59,
     sex: "Male",
     image:
-      "https://w7.pngwing.com/pngs/804/361/png-transparent-boris-johnson-desktop-god-johnson-sticker-arm-johnson-thumbnail.png",
+      "https://www.pngkit.com/png/full/787-7878023_boris-johnson-standing-tuxedo.png",
     location: "Mordor",
     isFriend: true,
   },
@@ -182,7 +182,7 @@ export const usersMockApi: User[] = [
     age: 59,
     sex: "Male",
     picture:
-      "https://w7.pngwing.com/pngs/804/361/png-transparent-boris-johnson-desktop-god-johnson-sticker-arm-johnson-thumbnail.png",
+      "https://www.pngkit.com/png/full/787-7878023_boris-johnson-standing-tuxedo.png",
     location: "Mordor",
     isFriend: true,
   },
