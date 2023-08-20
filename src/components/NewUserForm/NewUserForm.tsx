@@ -85,7 +85,7 @@ const NewUserForm = () => {
         <div className="options__control">
           <input
             type="radio"
-            id="friend"
+            id="Friend"
             name="friend"
             value="friend"
             onChange={changeNewUser}
@@ -96,7 +96,7 @@ const NewUserForm = () => {
         <div className="options__control">
           <input
             type="radio"
-            id="enemy"
+            id="Enemy"
             name="friend"
             value="enemy"
             onChange={changeNewUser}
