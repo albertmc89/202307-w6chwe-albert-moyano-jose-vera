@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import UsersListPage from "../../pages/UsersListPage/UsersListPage";
+import Counter from "../Counter/Counter";
 import Header from "../Header/Header";
 import "./App.css";
 
@@ -8,6 +9,7 @@ const App = (): React.ReactElement => {
     <div className="container">
       <Header />
       <main className="main-content">
+        <Counter />
         <Routes>
           <Route path="/home" element={<UsersListPage />} />
           <Route path="/" element={<Navigate to="/home" />} />
