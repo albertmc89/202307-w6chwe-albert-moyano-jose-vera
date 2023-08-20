@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Counter from "../../components/Counter/Counter";
 import UsersList from "../../components/UsersList/UsersList";
 import usePeopleApi from "../../hooks/usePeopleApi";
 import { useAppDispatch } from "../../store";
@@ -18,6 +19,7 @@ const UsersListPage = (): React.ReactElement => {
 
   return (
     <>
+      <Counter />
       <UsersList />
     </>
   );
