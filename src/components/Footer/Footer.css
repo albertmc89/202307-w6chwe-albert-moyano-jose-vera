@@ -1,6 +1,5 @@
 .footer {
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
   padding: 20px;
   height: 100%;
@@ -26,4 +25,12 @@
   align-items: flex-end;
   padding: 5px;
   gap: 5px;
+  width: 100%;
+}
+
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 30%;
 }
