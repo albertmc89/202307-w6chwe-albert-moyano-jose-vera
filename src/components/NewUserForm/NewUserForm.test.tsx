@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
+import { store } from "../../store";
 import NewUserForm from "./NewUserForm";
 
 describe("Given a NewUserForm component", () => {
@@ -11,7 +13,11 @@ describe("Given a NewUserForm component", () => {
       const imageInputLabelText = "Image:";
       const locationInputLabelText = "Location:";
 
-      render(<NewUserForm />);
+      render(
+        <Provider store={store}>
+          <NewUserForm />
+        </Provider>,
+      );
 
       const nameInput = screen.getByLabelText(
         nameInputLabelText,
@@ -45,7 +51,11 @@ describe("Given a NewUserForm component", () => {
       const locationText = "Bogotá";
       const imageText = "https://www.pngmart.com/files/7/Guy-PNG-Photos.png";
 
-      render(<NewUserForm />);
+      render(
+        <Provider store={store}>
+          <NewUserForm />
+        </Provider>,
+      );
 
       const name = screen.getByRole("textbox", {
         name: /name:/i,
