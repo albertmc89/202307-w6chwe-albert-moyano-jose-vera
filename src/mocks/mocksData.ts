@@ -187,3 +187,22 @@ export const usersMockApi: User[] = [
     isFriend: true,
   },
 ];
+
+export const newUsersMock: User = {
+  id: 1,
+  name: "Benito Camelas",
+  age: 88,
+  sex: "Male",
+  picture: "https://www.pngmart.com/files/7/Guy-PNG-Photos.png",
+  location: "Bogotá",
+  isFriend: true,
+};
+
+export const newUsersMockApi: Omit<User, "id"> = {
+  name: "Benito Camelas",
+  age: 88,
+  sex: "Male",
+  picture: "https://www.pngmart.com/files/7/Guy-PNG-Photos.png",
+  location: "Bogotá",
+  isFriend: true,
+};
