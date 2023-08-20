@@ -1,8 +1,15 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import usePeopleApi from "../../hooks/usePeopleApi";
+import { addUserActionCreator } from "../../store/Users/UsersSlice";
 import { User } from "../../types";
 import "./NewUserForm.css";
 
 const NewUserForm = () => {
+  const dispatch = useDispatch();
+
+  const { addUserApi } = usePeopleApi();
+
   const [newUser, setNewUser] = useState<Omit<User, "id">>({
     name: "",
     age: 0,
@@ -19,8 +26,16 @@ const NewUserForm = () => {
     });
   };
 
+  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const user = await addUserApi(newUser);
+
+    dispatch(addUserActionCreator(user));
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={submitForm}>
       <div className="from-control">
         <label htmlFor="name" className="form__label">
           Name:
