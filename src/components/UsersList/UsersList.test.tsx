@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store } from "../../store";
+import { usersMockApi } from "../../mocks/mocksData";
+import { setupStore, store } from "../../store";
 import UsersList from "./UsersList";
 
 describe("Given a UsersList component", () => {
@@ -19,6 +20,28 @@ describe("Given a UsersList component", () => {
       });
 
       expect(textHeading).toBeInTheDocument();
+    });
+  });
+
+  describe("When it's received with the users 'Armando Bronca' and 'Olivia Wilde'", () => {
+    test("Then it should show the user 'Armando Bronca' and user 'Olivia Wilde' inside headings", () => {
+      const store = setupStore({
+        usersState: {
+          users: usersMockApi,
+        },
+      });
+
+      render(
+        <Provider store={store}>
+          <UsersList />
+        </Provider>,
+      );
+
+      usersMockApi.forEach((user) => {
+        const userHeading = screen.getByRole("heading", { name: user.name });
+
+        expect(userHeading).toBeInTheDocument();
+      });
     });
   });
 });
