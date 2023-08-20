@@ -1,26 +1,13 @@
-import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import usePeopleApi from "../../hooks/usePeopleApi";
 import NewUserPage from "../../pages/NewUserPage/NewUserPage";
 import UsersListPage from "../../pages/UsersListPage/UsersListPage";
-import { useAppDispatch, useAppSelector } from "../../store";
-import { loadUsersActionCreator } from "../../store/Users/UsersSlice";
+import { useAppSelector } from "../../store";
 import Header from "../Header/Header";
 import Loading from "../Loading/Loading";
 import "./App.css";
 
 const App = (): React.ReactElement => {
-  const dispatch = useAppDispatch();
-  const { getUsers } = usePeopleApi();
   const isLoading = useAppSelector((state) => state.uiState.isLoading);
-
-  useEffect(() => {
-    (async () => {
-      const users = await getUsers();
-
-      dispatch(loadUsersActionCreator(users));
-    })();
-  }, [getUsers, dispatch]);
 
   return (
     <div className="container">
