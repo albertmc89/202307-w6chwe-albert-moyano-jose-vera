@@ -37,6 +37,17 @@ const usePeopleApi = () => {
     }
   }, [apiUrl, dispatch]);
 
-  return { getUsers };
+  const addUserApi = async (newUser: Omit<User, "id">) => {
+    try {
+      const { data } = await axios.post<User>(`${apiUrl}people`, newUser);
+
+      return data;
+    } catch {
+      throw new Error("Couldn't add user");
+    }
+  };
+
+  return { getUsers, addUserApi };
 };
+
 export default usePeopleApi;
