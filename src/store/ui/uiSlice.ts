@@ -9,9 +9,19 @@ const uiSlice = createSlice({
   name: "ui",
   initialState: initialUiState,
   reducers: {
-    startLoading: (): UiState => ({ isLoading: true }),
+    startLoading: (currentUiState: UiState): UiState => ({
+      ...currentUiState,
+      isLoading: true,
+    }),
+    stopLoading: (currentUiState: UiState): UiState => ({
+      ...currentUiState,
+      isLoading: false,
+    }),
   },
 });
 
 export const uiReducer = uiSlice.reducer;
-export const { startLoading: startLoadingActionCreator } = uiSlice.actions;
+export const {
+  startLoading: startLoadingActionCreator,
+  stopLoading: stopLoadingActionCreator,
+} = uiSlice.actions;
